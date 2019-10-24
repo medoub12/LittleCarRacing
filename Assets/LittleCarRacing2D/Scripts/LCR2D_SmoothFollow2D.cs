@@ -7,7 +7,7 @@ public class LCR2D_SmoothFollow2D : MonoBehaviour {
 
     public Transform target ;
     float  smoothTime = 0.1f;
-    float offset, AddSize, SmoothDampPos = 0;
+    public float offset, AddSize, SmoothDampPos = 0;
     Vector2 targetPos,  targetVel, myPos, actualPos;
 
     public bool useSmoothing, addForward = false;
