@@ -13356,8 +13356,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1443130185}
   - component: {fileID: 1443130184}
-  - component: {fileID: 1443130183}
   - component: {fileID: 1443130182}
+  - component: {fileID: 1443130183}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -13378,11 +13378,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4088051448852019}
-  offset: 0
-  AddSize: 20
-  SmoothDampPos: 0
+  followOffset: {x: 0, y: 0}
   useSmoothing: 1
-  addForward: 1
+  smoothAmount: 0.315
+  useRigidbodyVelocityOffset: 1
+  rigidbodyOffsetMaxDistance: 11
+  rigidbodyOffsetInsensitivity: 30
+  useCameraAdjustSizing: 1
+  cameraMinimumSize: 15
+  cameraSizingMultiplier: 0.8
+  cameraSizingSmooth: 1.5
+  showCameraTargetLine: 0
 --- !u!81 &1443130183
 AudioListener:
   m_ObjectHideFlags: 0
@@ -13418,7 +13424,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 30.72
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
