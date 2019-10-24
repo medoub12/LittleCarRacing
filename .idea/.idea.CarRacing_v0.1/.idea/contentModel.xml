@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="\app" t="IncludeRecursive" />
+    <e p="\bdffb01f" t="IncludeRecursive" />
+    <e p="C:\Users\Администратор\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Администратор\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_CarRacing_v0.1.-1299194543.00" t="ExcludeRecursive" />
+    <e p="D:\UnityProjects\CarRicing\CarRacing_v0.1" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="G51" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="G51_ColorController.cs" t="Include" />
+            <e p="G51_RockColorizer.cs" t="Include" />
+          </e>
+        </e>
+        <e p="G51_SortOrderEditor.cs" t="Include" />
+        <e p="LittleCarRacing2D" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="OFL.txt" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="LCR2D_AI.cs" t="Include" />
+            <e p="LCR2D_CarBehavior2D.cs" t="Include" />
+            <e p="LCR2D_CrushChecker.cs" t="Include" />
+            <e p="LCR2D_DrawPathLine.cs" t="Include" />
+            <e p="LCR2D_GoToURL.cs" t="Include" />
+            <e p="LCR2D_InputManager.cs" t="Include" />
+            <e p="LCR2D_SmoothFollow2D.cs" t="Include" />
+            <e p="PathFinder2D.cs" t="Include" />
+            <e p="Trash" t="Include">
+              <e p="CarController.cs" t="Include" />
+              <e p="EnemieController.cs" t="Include" />
+            </e>
+            <e p="WaitTimerToStart.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="CarRacing_v0.1.sln" t="IncludeFlat" />
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
