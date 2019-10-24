@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using System.Collections;
+using Unity.Mathematics;
 
 public class LCR2D_SmoothFollow2D : MonoBehaviour {
 
@@ -56,6 +57,8 @@ public class LCR2D_SmoothFollow2D : MonoBehaviour {
         Vector3 newPos = new Vector3(actualPos.x, actualPos.y , transform.position.z);
         transform.position = Vector3.Slerp(transform.position, newPos, Time.time);
         AddSize = Mathf.SmoothDamp(AddSize, target.GetComponent<Rigidbody2D>().velocity.magnitude, ref SmoothDampPos, 1f);
+
+        transform.rotation = Quaternion.LerpUnclamped(transform.rotation, target.rotation, 0.75f * Time.deltaTime);
     }
 
 }
