@@ -28,7 +28,7 @@ public class LCR2D_SmoothFollow2D : MonoBehaviour {
         if(addForward)
         {
             Vector2 vel = target.GetComponent<Rigidbody2D>().velocity;
-            targetPos = (Vector2)target.position + vel;
+            targetPos = (Vector2)target.position + vel / 2f;
         }
         else
         {
@@ -42,7 +42,7 @@ public class LCR2D_SmoothFollow2D : MonoBehaviour {
 
             actualPos.x =  Mathf.SmoothDamp( myPos.x, targetPos.x, ref targetVel.x, smoothTime);
             actualPos.y= Mathf.SmoothDamp( myPos.y, targetPos.y + offset, ref targetVel.y, smoothTime);
-            GetComponent<Camera>().orthographicSize = 8f + (AddSize / 4);
+            GetComponent<Camera>().orthographicSize = 15f + (AddSize / 4);
 
         }
 

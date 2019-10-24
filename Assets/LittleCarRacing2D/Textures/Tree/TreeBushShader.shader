@@ -115,7 +115,7 @@ Shader "g51/treeBushShader"
 				float4 AlphaMask120 = appendResult16;
 				float4 clampResult24 = clamp( ( appendResult23 + AlphaMask120 ) , float4( 1,1,1,0 ) , float4( 1,1,1,1 ) );
 				
-				fixed4 c = ( tex2D( _MainTex, uv_MainTex ) * clampResult24 );
+				fixed4 c = ( IN.color * ( tex2D( _MainTex, uv_MainTex ) * clampResult24 ) );
 				c.rgb *= c.a;
 				return c;
 			}
@@ -128,15 +128,15 @@ Shader "g51/treeBushShader"
 }
 /*ASEBEGIN
 Version=17000
-0;0;1920;1019;3209.103;-36.95966;1.833291;True;False
+0;0;1920;1019;1524.884;393.1317;1;True;False
 Node;AmplifyShaderEditor.CommentaryNode;26;-2477.674,768.3262;Float;False;2382.006;692.1158;Comment;12;50;46;47;48;49;14;30;18;8;4;9;5;;1,1,1,1;0;0
 Node;AmplifyShaderEditor.WorldPosInputsNode;5;-2438.843,860.8352;Float;False;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
 Node;AmplifyShaderEditor.DynamicAppendNode;9;-2258.843,884.8352;Float;False;FLOAT2;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT2;0
-Node;AmplifyShaderEditor.Vector2Node;4;-2308.843,997.8351;Float;False;Property;_PlayerPosition;PlayerPosition;3;0;Create;True;0;0;False;0;0,0;-1.29,-0.22;0;3;FLOAT2;0;FLOAT;1;FLOAT;2
+Node;AmplifyShaderEditor.Vector2Node;4;-2308.843,997.8351;Float;False;Property;_PlayerPosition;PlayerPosition;3;0;Create;True;0;0;False;0;0,0;1.76,42;0;3;FLOAT2;0;FLOAT;1;FLOAT;2
 Node;AmplifyShaderEditor.DistanceOpNode;8;-2086.843,918.8351;Float;True;2;0;FLOAT2;0,0;False;1;FLOAT2;0,0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.RangedFloatNode;18;-1887.244,985.975;Float;False;Property;_gradientRadius;gradientRadius;0;0;Create;True;0;0;False;0;0;11.86;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;18;-1887.244,985.975;Float;False;Property;_gradientRadius;gradientRadius;0;0;Create;True;0;0;False;0;0;35;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleDivideOpNode;30;-1678.286,916.3394;Float;True;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.RangedFloatNode;14;-1659.616,1262.822;Float;False;Property;_sizeOffset;sizeOffset;1;0;Create;True;0;0;False;0;-2;0.5;0;1;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;14;-1659.616,1262.822;Float;False;Property;_sizeOffset;sizeOffset;1;0;Create;True;0;0;False;0;-2;0.2;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.TFHCRemapNode;49;-1445.286,1027.339;Float;True;5;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;1;False;3;FLOAT;1;False;4;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.TFHCRemapNode;48;-1366.286,1257.339;Float;False;5;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;1;False;3;FLOAT;-1;False;4;FLOAT;1;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleAddOpNode;47;-1154.286,1176.339;Float;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
@@ -152,6 +152,8 @@ Node;AmplifyShaderEditor.TemplateShaderPropertyNode;1;-1497.44,-281.9011;Float;F
 Node;AmplifyShaderEditor.SamplerNode;2;-1300.44,-284.9011;Float;True;Property;_TextureSample0;Texture Sample 0;0;0;Create;True;0;0;False;0;None;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;6;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.ClampOpNode;24;-801.2426,112.0023;Float;False;3;0;FLOAT4;0,0,0,0;False;1;FLOAT4;1,1,1,0;False;2;FLOAT4;1,1,1,1;False;1;FLOAT4;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;15;-372.0115,12.60516;Float;False;2;2;0;COLOR;0,0,0,0;False;1;FLOAT4;0,0,0,0;False;1;COLOR;0
+Node;AmplifyShaderEditor.VertexColorNode;52;-449.8835,-167.1317;Float;False;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.SimpleMultiplyOpNode;51;-250.8835,-137.1317;Float;False;2;2;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;0;0,0;Float;False;True;2;Float;ASEMaterialInspector;0;6;g51/treeBushShader;0f8ba0101102bb14ebf021ddadce9b49;True;SubShader 0 Pass 0;0;0;SubShader 0 Pass 0;2;True;3;1;False;-1;10;False;-1;0;1;False;-1;0;False;-1;False;False;True;2;False;-1;False;False;True;2;False;-1;False;False;True;5;Queue=Transparent=Queue=0;IgnoreProjector=True;RenderType=Transparent=RenderType;PreviewType=Plane;CanUseSpriteAtlas=True;False;0;False;False;False;False;False;False;False;False;False;False;True;2;0;;0;0;Standard;0;0;1;True;False;2;0;FLOAT4;0,0,0,0;False;1;FLOAT3;0,0,0;False;0
 WireConnection;9;0;5;1
 WireConnection;9;1;5;2
@@ -175,6 +177,8 @@ WireConnection;2;0;1;0
 WireConnection;24;0;22;0
 WireConnection;15;0;2;0
 WireConnection;15;1;24;0
-WireConnection;0;0;15;0
+WireConnection;51;0;52;0
+WireConnection;51;1;15;0
+WireConnection;0;0;51;0
 ASEEND*/
-//CHKSM=2949FDEB0E0E75AC95216FDA298B9B4072C6A2EA
+//CHKSM=94214C358899F4D02282FA714168BF3EA7F3A35C
