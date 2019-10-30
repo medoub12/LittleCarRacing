@@ -28,4 +28,25 @@ public class Checkpoint : MonoBehaviour
             }
         }
     }
+
+    private void OnValidate()
+    {
+        if (isFinishLine)
+        {
+            Checkpoint[] checkpoints = new Checkpoint[transform.parent.childCount];
+            int startingIndex = 0;
+
+            for (int i = 0; i < checkpoints.Length; i++)
+            {
+                checkpoints[i] = transform.parent.GetChild(i).GetComponent<Checkpoint>();
+                if (checkpoints[i] == this)
+                    startingIndex = i;
+            }
+            
+            for (int i = 0; i < checkpoints.Length; i++)
+            {
+                checkpoints[(++startingIndex) % checkpoints.Length].number = i + 1;
+            }
+        }
+    }
 }
